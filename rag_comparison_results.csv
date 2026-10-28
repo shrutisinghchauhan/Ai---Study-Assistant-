@@ -1,0 +1,21 @@
+question,expected_answer,mode,answer,retrieval_seconds,generation_latency_seconds,total_latency_seconds,output_tokens,tokens_per_second,status
+What is the transaction retry limit?,4,No RAG,I do not know.,0.0,0.666,0.666,6,27.04,success
+What is the transaction retry limit?,4,RAG,The transaction retry limit is 4 attempts.,0.024,1.865,1.89,10,22.83,success
+What is the checkpoint interval in minutes?,7,No RAG,I do not know.,0.0,0.422,0.422,6,25.84,success
+What is the checkpoint interval in minutes?,7,RAG,The checkpoint interval in the lab is 7 minutes.,0.027,0.853,0.88,12,22.72,success
+At what time is the database backup scheduled?,02:15,No RAG,I do not know.,0.0,0.515,0.515,6,18.66,success
+At what time is the database backup scheduled?,02:15,RAG,The database backup is scheduled at 02:15 AM.,0.03,0.987,1.017,15,20.2,success
+How many days are transaction logs retained?,12,No RAG,I do not know the exact number of days transaction logs are retained.,0.0,0.772,0.772,15,25.5,success
+How many days are transaction logs retained?,12,RAG,The transaction log retention period is 12 days.,0.026,0.779,0.805,12,21.72,success
+Which transaction isolation level is used?,REPEATABLE READ,No RAG,I do not know.,0.0,0.404,0.404,6,28.3,success
+Which transaction isolation level is used?,REPEATABLE READ,RAG,The transaction isolation level used in the lab is REPEATABLE READ.,0.028,0.852,0.88,15,23.31,success
+What is the primary database name?,AtlasDB,No RAG,I do not know.,0.0,0.396,0.396,6,27.27,success
+What is the primary database name?,AtlasDB,RAG,The primary database name is AtlasDB.,0.028,0.605,0.632,9,22.54,success
+What is the maximum connection pool size?,35,No RAG,I do not know.,0.0,0.426,0.426,6,27.11,success
+What is the maximum connection pool size?,35,RAG,The maximum connection pool size for the lab is 35.,0.022,0.778,0.8,14,23.74,success
+Which PostgreSQL port is configured?,5544,No RAG,I do not know.,0.0,0.368,0.368,6,29.68,success
+Which PostgreSQL port is configured?,5544,RAG,The PostgreSQL port configured for the application is 5544.,0.027,0.792,0.819,15,25.2,success
+What is the slow-query threshold in milliseconds?,850,No RAG,I do not know.,0.0,0.412,0.412,6,27.13,success
+What is the slow-query threshold in milliseconds?,850,RAG,The slow-query alert threshold is 850 milliseconds.,0.025,0.803,0.828,13,22.99,success
+What is the recovery point objective in minutes?,10,No RAG,I do not know.,0.0,0.37,0.37,6,30.32,success
+What is the recovery point objective in minutes?,10,RAG,The recovery point objective in the lab is 10 minutes.,0.035,0.737,0.772,14,26.01,success

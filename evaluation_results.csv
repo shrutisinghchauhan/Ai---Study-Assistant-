@@ -1,0 +1,140 @@
+topic,question,answer,latency_seconds,output_tokens,tokens_per_second,status
+OOP,What is polymorphism in Java?,"Polymorphism in Java is a fundamental concept that allows objects of different classes to be treated as objects of a common superclass. It enables methods to be called on objects of different types without knowing the exact type of the object at compile time. This is achieved through method overriding and method overloading.
+
+1. **Method Overriding**: When a subclass provides a method with the same name as a method in its superclass, it is called method overriding. The subclass method can then provide a different implementation of the method, which is called a method override. This allows the subclass to extend the functionality of the superclass method.
+
+2. **Method Overloading**: When a class has multiple methods with the same name but different parameters, it is called method overloading. This allows the same method name to be used for different purposes, depending on the number and type of parameters passed to the method.
+
+Polymorphism is crucial in Java for several reasons:
+- **Code Reusability**: It allows you to write code that can work with objects of different classes without knowing their specific types.
+- **Flexibility**: It enables you to write more flexible and adaptable code that can handle different types of objects.
+- **Encapsulation**: It supports encapsulation by allowing methods to be called on objects of different types, which can be useful for hiding implementation details.
+
+In summary, polymorphism in Java is a powerful feature that allows objects of different classes to be treated as objects of a common superclass, enabling flexibility and reusability",12.93,300,23.89,success
+OOP,Explain inheritance with an example.,"Inheritance is a fundamental concept in object-oriented programming that allows a class to inherit properties and methods from another class. This means that a derived class (the child class) can reuse the code of the base class (the parent class) and extend it with additional functionality.
+
+**Example:**
+
+Let's say we have two classes: `Animal` and `Dog`.
+
+- `Animal` is the base class that defines the common properties and methods for all animals.
+- `Dog` is the derived class that inherits from `Animal` and adds specific properties and methods related to dogs.
+
+```plaintext
+// Base class
+class Animal {
+    String name;
+    int age;
+
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void eat() {
+        System.out.println(""Eating"");
+    }
+
+    public void sleep() {
+        System.out.println(""Sleeping"");
+    }
+}
+
+// Derived class
+class Dog extends Animal {
+    String breed;
+
+    public Dog(String name, int age, String breed) {
+        super(name, age); // Call the constructor of the base class
+        this.breed = breed;
+    }
+
+    public void bark() {
+        System.out.println(""Barking"");
+    }
+
+    public void fetch() {
+        System.out.println(""Fetching"");
+    }
+}
+
+// Usage
+Dog myDog = new Dog(""Buddy"", 3, ""Golden Retriever"");
+myDog.eat();",13.54,300,22.56,success
+OS,What is a deadlock?,"A deadlock is a situation in a multi-threaded or multi-process environment where two or more processes or threads are waiting for each other to release resources, leading to a circular wait. This results in a state where no process can proceed, as each is waiting for the other to release its resource. Deadlocks can occur due to resource allocation conflicts, improper resource management, or improper synchronization mechanisms.",3.79,79,21.95,success
+OS,What is the difference between a process and a thread?,"A process is an instance of a program that is running on a computer. It is the basic unit of execution in a computer system. A process has its own memory space, handles, and resources, and can have multiple threads.
+
+A thread, on the other hand, is a single execution of a program within a process. It is a lightweight process that shares the same memory space as the process it belongs to. A thread can be thought of as a single flow of execution within a process.
+
+Key differences:
+1. Process vs. Thread: A process is a complete program, while a thread is a single flow of execution within a process.
+2. Memory: A process has its own memory space, while a thread shares the same memory space as the process.
+3. Resource: A process has its own resources, while a thread shares resources with the process it belongs to.
+4. Execution: A process can have multiple threads, but a thread can only be in one process at a time.",8.61,201,23.89,success
+DBMS,What is database normalization?,"Database normalization is a process in database design that aims to minimize redundancy and improve data integrity by organizing data into a hierarchical structure. The goal is to ensure that each piece of data is stored only once and that relationships between tables are properly defined. The normalization process typically involves breaking down tables into smaller, more manageable ones, and ensuring that each table has a single responsibility. This leads to a more efficient and scalable database system. The most common levels of normalization are 1NF, 2NF, 3NF, and 4NF, with 3NF being the highest level.",4.69,118,25.93,success
+DBMS,Explain ACID properties.,"ACID properties are a set of characteristics that describe the behavior of a database system when handling transactions. They ensure that transactions are reliable, consistent, and durable. Here's a breakdown of each property:
+
+1. **Atomicity**: All operations within a transaction are treated as a single unit. If any part of the transaction fails, the entire transaction is rolled back, ensuring that no partial changes occur.
+
+2. **Consistency**: The database remains in a consistent state before and after a transaction. This means that the database is in a valid state before the transaction starts and remains valid after it completes.
+
+3. **Isolation**: Transactions are isolated from each other, meaning that changes made by one transaction do not affect the results of another transaction running concurrently.
+
+4. **Durability**: Once a transaction is committed, its changes are permanent and survive system failures. This ensures that the database remains in a consistent state even if the system crashes.
+
+These properties together ensure that database transactions are reliable and consistent, providing a high level of data integrity and reliability.",8.51,211,25.36,success
+DSA,What is binary search?,"Binary search is an efficient algorithm for finding a specific value in a sorted array. It works by repeatedly dividing the search interval in half. Here’s how it works:
+
+1. **Start with the middle element**: Compare the target value with the middle element of the array.
+2. **If they match**: The search is successful, and the index of the middle element is returned.
+3. **If they don’t match**:
+   - If the target is less than the middle element, repeat the search on the left half.
+   - If the target is greater, repeat the search on the right half.
+4. **Repeat until the target is found or the interval is empty**.
+
+Binary search is particularly efficient for large datasets because it reduces the search space by half with each step, making it much faster than linear search for large arrays.",6.75,170,25.79,success
+DSA,Explain the time complexity of merge sort.,"Merge sort has a time complexity of O(n log n). This is achieved by dividing the array into two halves, sorting each half recursively, and then merging the sorted halves back together. The log n factor comes from the recursive nature of the algorithm, where the problem size is halved at each step.",2.54,62,26.38,success
+CN,What is the difference between TCP and UDP?,"TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) are two different protocols used for transmitting data over the internet. Here are the key differences:
+
+1. **Connection vs. Connectionless:**
+   - TCP is connection-oriented, meaning it establishes a connection before sending data. This ensures reliable delivery and error correction.
+   - UDP is connectionless, meaning it sends data without establishing a connection first. This is faster but less reliable.
+
+2. **Error Handling:**
+   - TCP provides reliable delivery by retransmitting lost or corrupted packets.
+   - UDP does not provide any error handling; it simply sends the data as it is received.
+
+3. **Latency:**
+   - TCP is slower because it needs to establish a connection and retransmit data if necessary.
+   - UDP is faster because it sends data immediately without the need for connection setup.
+
+4. **Application Usage:**
+   - TCP is often used for applications that require reliability and error correction, such as web browsing, file transfers, and email.
+   - UDP is used for applications that can tolerate some data loss, such as streaming audio or video, or for real-time applications like VoIP (Voice over Internet Protocol).
+
+5. **Performance:**
+   - TCP is more suitable for applications that require low latency and high reliability.
+   - UDP is better suited for applications that can tolerate some data loss and require low latency.
+
+In summary, TCP is more reliable and suitable for applications that require high data",12.18,300,25.03,success
+Python,What is the difference between a list and a tuple?,"A list and a tuple are both collections of items, but they have some key differences:
+
+1. **Mutability**:
+   - **List**: Lists are mutable, meaning you can change their contents after they are created. You can add, remove, or modify elements.
+   - **Tuple**: Tuples are immutable, meaning once a tuple is created, its contents cannot be changed. You can only access and retrieve elements.
+
+2. **Syntax**:
+   - **List**: Lists are typically represented with square brackets `[]`.
+   - **Tuple**: Tuples are represented with parentheses `()`.
+
+3. **Performance**:
+   - Lists are generally faster to create and access elements than tuples, but tuples are faster to modify.
+
+4. **Use Case**:
+   - **List**: Used when you need to frequently add, remove, or modify elements.
+   - **Tuple**: Used when you need a collection of items that should not be changed, such as coordinates, configuration settings, or other data that should be consistent.
+
+5. **Memory Usage**:
+   - Lists use more memory than tuples because they store the actual elements, whereas tuples store references to the elements.
+
+In summary, use a list when you need to frequently change the contents, and use a tuple when you need a collection that should remain unchanged.",10.75,268,25.37,success
